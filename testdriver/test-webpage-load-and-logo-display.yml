@@ -1,0 +1,16 @@
+version: 4.0.69
+steps:
+  - prompt: Assert that the webpage loads successfully.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: assert
+        expect: the webpage shows "Start Building" button
+  - prompt: >-
+      Assert that the PubNub logo is displayed.  # Use the content of the file
+      from the environment
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: assert
+        expect: the webpage shows "PubNub" text
