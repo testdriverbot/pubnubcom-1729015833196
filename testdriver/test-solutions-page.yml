@@ -1,0 +1,16 @@
+version: 4.0.69
+steps:
+  - prompt: Click on "Solutions" in the navigation.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Solutions
+        description: navigation link
+        action: click
+  - prompt: >-
+      Assert that various solutions and use cases are displayed.  # Use the
+      content of the file from the environment
+    commands:
+      - command: assert
+        expect: various solutions and use cases are displayed
