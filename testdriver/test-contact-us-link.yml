@@ -1,0 +1,14 @@
+version: 4.0.69
+steps:
+  - prompt: Click on "Contact Sales".
+    commands:
+      - command: hover-text
+        text: Contact Sales
+        description: button in the header
+        action: click
+  - prompt: >-
+      Assert that the user is taken to the contact page or that a contact form
+      is displayed.  # Use the content of the file from the environment
+    commands:
+      - command: assert
+        expect: the contact form is displayed
