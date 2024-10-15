@@ -1,0 +1,21 @@
+version: 4.0.69
+steps:
+  - prompt: Scroll to the footer of the webpage.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: scroll-until-text
+        text: Privacy Policy
+        direction: down
+  - prompt: Click on a footer link, such as "Privacy Policy".
+    commands:
+      - command: hover-text
+        text: Privacy Policy
+        description: footer link
+        action: click
+  - prompt: >-
+      Assert that the appropriate page loads without errors.  # Use the content
+      of the file from the environment
+    commands:
+      - command: assert
+        expect: the page title is "Privacy Policy | PubNub"
