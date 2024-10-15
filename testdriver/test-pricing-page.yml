@@ -1,0 +1,24 @@
+version: 4.0.69
+steps:
+  - prompt: Click on "Pricing" in the navigation.
+    commands:
+      - command: hover-text
+        text: Pricing
+        description: navigation link
+        action: click
+  - prompt: Assert that the pricing details are displayed.
+    commands:
+      - command: assert
+        expect: the pricing details are displayed
+  - prompt: Attempt to select the cheapest plan.
+    commands:
+      - command: hover-text
+        text: Create an Account
+        description: button for the free plan
+        action: click
+  - prompt: >-
+      Assert that the chosen plan's details are shown without error.  # Use the
+      content of the file from the environment
+    commands:
+      - command: assert
+        expect: the chosen plan's details are shown without error
